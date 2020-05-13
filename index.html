@@ -1,0 +1,110 @@
+<!--
+    Baybay YouTubers - Thumbnail Grabber
+    @author Graeme Xyber Pastoril / cyboryan
+    @link cyboryan.github.io
+-->
+
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+        <meta name="keywords" content="baybay, baybay youtubers, youtube, youtubers, baybay city, baybay city youtubers">
+        <meta name="description" content="List of Baybay City YouTubers. To join on the list, message us on www.facebook.com/BaybayYouTubers" />
+        <meta name="author" content="cyboryan" />
+
+        <link href="assets/css/bootstrap.min.css" rel="stylesheet" type="text/css">
+        <link href="assets/css/index.css" rel="stylesheet" type="text/css">
+        <!--<link rel="shortcut icon" type="image/png" href="assets/img/shortcut.logo.png">-->
+        <title>Photo Generator</title>
+    </head>
+    <body class="sb-nav-fixed bg-light">
+        <div id="layout">
+            <div id="layoutContent">
+                <main>
+                    <div class="container-fluid">
+                        <div id="contentFinal" style="width:852px;display:block" class="ml-auto mr-auto">
+                            <h1 class="mt-3 mb-2 text-center" style="display:block">Test Photo Generator</h1>
+                            <img id="logo" style="display:none; height:64px; width:auto;" class="ml-auto mr-auto mb-3 mt-3" src="#">
+                            <div class="row">
+                                <div id="welcome" class="col-sm-12 col-md-12 col-lg-6 col-xl-6">
+                                    <p class="mt-4 mb-4">
+                                        This page converts an HTML element on the right into an image file, which can be used for posting on social media. The element on the right is a very simple example though but I have been experimenting with its functionality that can be used on later projects.
+                                        <br>
+                                        <br>
+                                        What's on my mind recently is using this to create social media posts on my old project ElectSys to post election results, candidates, and stuff. I wonder what's on your mind though, lemme know :D This page will be updated later with cool stuff.
+                                    </p>
+    
+                                    <p id="message" class="text-center mb-3">Click the button to convert the element on the right into an image, then automatically downloads it.</p>
+    
+                                    <button id="downloadPhoto" onclick="downloadPhoto()" class="form-control btn btn-primary">Download Photo</button>
+                                </div>
+                                <div id="image" class="col-sm-12 col-md-12 col-lg-6 col-xl-6">
+                                    <div id="image-container">
+                                        <div id="image-content">
+                                            <div id="image-header">
+                                                <p class="text-center pt-3 text-light">This is a test photo</p>
+                                            </div>
+                                            <img id="image-example" src="assets/img/example.jpg">
+                                            <h2 class="text-center text-light">Graeme Xyber Pastoril</h2>
+                                            <p class="text-center text-light">@cyboryan</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </main>
+                <footer class="py-4 mt-auto" style="background-color:#ffffffaa">
+                    <div class="container-fluid">
+                        <div id="footerContent" class="d-flex align-items-center justify-content-between small">
+                            <div id="footer-left" class="text-dark">
+                                <b>
+                                    Powered by HTML2Canvas &middot;
+                                    &copy; 
+                                    2020
+                                    <a href="https://www.facebook.com/officialCyboryan" target="_blank">
+                                        cyboryan
+                                    </a>
+                                </b>
+                            </div>
+                            <div id="footer-right">
+                                <a href="https://www.facebook.com/officialCyboryan" target="_blank">Facebook</a>
+                                &middot;
+                                <a href="https://www.github.com/cyboryan" target="_blank">GitHub</a>
+                            </div>
+                        </div>
+                    </div>
+                </footer>
+            </div>
+        </div>
+        <a id="download" style="display:none"></a>
+
+        <script src="assets/js/jquery.min.js"></script>
+        <script src="assets/js/bootstrap.bundle.min.js"></script>   
+        <script src="assets/js/html2canvas.min.js"></script>
+        <script>
+            function downloadPhoto()
+            {
+                window.scrollTo(0, 0);
+                html2canvas(document.getElementById("image-content")).then(function (canvas){
+                    $("#download").attr("href", canvas.toDataURL("image/png"));
+                    $("#download").attr("download", 'test.jpg');
+                    $("#download")[0].click();
+                });
+
+                // youtube_parser($("#url").val();
+                /*html2canvas(document.body, {
+                    dpi: 192,
+                    onrendered: function(canvas) {
+                        console.log(canvas.toDataURL("image/png"));
+                        
+                    }
+                });*/
+            }
+        </script>
+    </body>
+</html>
+
+
+    
